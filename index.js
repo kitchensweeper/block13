@@ -5,10 +5,14 @@
  * @param {number} f temperature in °F
  * @returns {number} temperature in °C
  */
+
+// F to C, subtract 32 from the F value, then multiply it by 5/9.
 function convertToCelsius(f) {
   // TODO
+  const userFahrenheit = ((f - 32) * 5) / 9;
+  return Math.round(userFahrenheit);
 }
-
+convertToCelsius;
 /**
  * | Temperature | Description |
  * | ----------- | ----------- |
@@ -24,6 +28,17 @@ function convertToCelsius(f) {
  */
 function describeTemperature(f) {
   // TODO
+  if (f < 32) {
+    return "very cold";
+  } else if (f < 64) {
+    return "cold";
+  } else if (f < 86) {
+    return "warm";
+  } else if (f < 100) {
+    return "hot";
+  } else if (f >= 100) {
+    return "very hot";
+  }
 }
 
 /**
@@ -32,6 +47,7 @@ function describeTemperature(f) {
  */
 function getRandomInt(limit) {
   // TODO
+  return Math.round(Math.random() * limit);
 }
 
 // -------------------- DO NOT CHANGE THE CODE BELOW ---------------------- //
